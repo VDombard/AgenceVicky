@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Ajout d'une agence de voyage</title>
+        <style></style>
+    </head>
+
+    <body>
+        <h1>Ajouter une agences de voyage</h1>
+        <form action="/agenceadd" method="POST">
+            Numéro id agence:
+            <input type="hidden" name="idagence" value="<%= idagence %>"> <br>
+            Nom agence:
+            <input type="text" name="nomagence" value="<%= nomagence %>"><br>
+
+            <button type="submit">Valider l'ajout</button>
+
+        </form>
+
+        <form action="/homepage" method="GET">
+            <button type="submit">Retour à la liste</button>
+        </form>
+
+    </body>
+
+    <footer></footer>
+
+</html>

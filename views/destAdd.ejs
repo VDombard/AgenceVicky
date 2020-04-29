@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Ajouter une destination</title>
+
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        <h1>Ajouter une série</h1>
+
+        <form action="/destadd" method="POST">
+        
+            Country:
+            <input type="text" name="country" value="<%= country %>"> <br>
+            City:
+            <input type="text" name="city" value="<%= city %>"> <br>
+            Days:
+            <input type="text" name="days" value="<%= days %>"> <br>
+            Agence:
+            <input type="text" name="fkagence" value="<%= fkagence %>"> <br>
+
+            <input type="submit" name="ajouter" value="Ajouter"><br>
+
+        </form>
+
+        <form action="/homepage" method="GET">
+            <button type="submit">Retour à la liste</button>
+        </form>
+
+
+    </body>
+
+</html>

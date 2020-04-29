@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Modifier une destination</title>
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        <h1>Modifier une destination</h1>
+
+        <form action="/destupdate" method="POST">
+            <input type="hidden" name="iddestination" value="<%= iddestination %>">
+            Country:
+            <input type="text" name="country" value="<%= country %>"><br>
+            City:
+            <input type="text" name="city" value="<%= city %>"><br>
+            Days:
+            <input type="text" name="days" value="<%= days %>"><br>
+            Agence:
+            <input type="text" name="fkagence" value="<%= fkagence %>"><br>
+
+            <button type="submit">Modifier</button>
+        </form>
+
+        <form action="/homepage" method="GET">
+            <button type="submit"> Retour à la liste</button>
+        </form>
+
+    </body>
+</html>

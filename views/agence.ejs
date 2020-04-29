@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agences</title>
+        <style>
+            
+        </style>
+    </head>
+
+    <body> 
+
+        <h1>Liste des agences</h1>
+
+        <form action = "/homepage" method="GET">
+            <button type="submit">Page d'accueil</button>
+
+        </form>
+
+        <div>
+            <table>
+                <% for(let i = 0; i < agence.length; i++) { %>
+                <tr>
+                    <td>
+                        <form action="/agenceupdateform/<%= agence[i].idagence %>" method="GET">
+                        <button type="submit">Modifier</button>
+                        </form>
+                        
+                        <form action="/agenceaddform/<%= agence[i].idagence %>" method="GET">
+                        <button type="submit">Ajouter</button>
+                        </form>
+                    </td>
+
+                    <td><%= agence[i].idagence %> </td>
+                    <td><%= agence[i].nomagence %> </td> 
+
+                </tr>
+                <% } %>
+            </table>
+        </div>
+
+    </body>
+
+    <footer></footer>
+</html>

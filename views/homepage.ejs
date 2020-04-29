@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home Page</title>
+        <style></style>
+    </head>
+
+    <body>
+        <h1>Home page</h1>
+
+        <form action="/confirm" method="GET">
+            <button type="submit">Supprimer le compte</button>
+        </form>
+
+        <form action="/userHome" method="GET">
+            <button type="submit">Log out</button>
+        </form>
+
+        <h2>Liste des destinations</h2>
+
+        <form action="/homepage" method="GET">
+            <button type="submit"> Destinations </button>
+        </form>
+
+        <form action="/agence" method="GET">
+            <button type="submit">Agences</button>
+        </form>
+
+        <form action="/destaddform" method="GET">
+        <button type="submit">Ajouter destination</button>
+        </form>
+
+        <div>
+            <table>
+                <% for (let i = 0 ; i < destination.length ; i++) {%>
+                <tr>
+                    <td>
+                        <form action="/destupdateform/<%= destination[i].iddestination %>" method="GET">
+                        <button type="submit">Modifier</button>
+                        </form>
+
+                        <form action="/destdeleteform/<%= destination[i].iddestination %>" method="GET">
+                        <button type="submit">Supprimer</button>
+                        </form>
+                    </td>
+
+                    <td><%= destination[i].country %> </td> 
+                    <td><%= destination[i].city %> </td> 
+                    <td><%= destination[i].days %> </td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+        
+
+
+    </body>
+</html>
