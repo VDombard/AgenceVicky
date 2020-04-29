@@ -1,6 +1,5 @@
 let User = require('../models/userModel');
 let connection = require('../db');
-let userList = [];
 
 
 exports.userHome = function (req, res) {

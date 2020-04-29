@@ -27,6 +27,7 @@ router.post('/auth_login', userController.login);
 router.post('/user_delete', userController.userDelete);
 router.get('/confirm', userController.confirm);
 
+
 //Routes <DESTINATION>
 router.get('/homepage', check, destinationController.homepage);
 router.get('/destaddform', destinationController.destAddForm);
