@@ -3,33 +3,50 @@
 <html lang="fr">
 
     <head>
-        <title>S'enregister</title>
-        <style>
 
-        </style>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="s'enregister" content="Page pour se créer un compte">
+
+        <link rel="stylesheet" href="/public/style.css" />
+
+        <title>S'enregister</title>
+
     </head>
 
     <body>
 
-        <h1>Ouvrir un compte</h1>
+        <header>
+            <h1>Ouvrir un compte</h1>
+        </header>
 
-        <form action="/auth_register" method="POST">
-        
-            Firstname:
-            <input type="text" name="firstname" required />
+        <main>
+            <div class="block">
+                <div id="enregister">
+                    <form action="/auth_register" method="POST">
+                    
+                        <h5>Firstname:</h5>
+                        <input type="text" name="firstname" placeholder="Prénom" required />
 
-            Lastname:
-            <input type="text" name="lastname" required />
+                        <h5>Lastname:</h5>
+                        <input type="text" name="lastname" placeholder="Nom de famille" required />
 
-            E-mail:
-            <input type="text" name="email" required />
+                        <h5>E-mail:</h5>
+                        <input type="text" name="email" placeholder="Votre e-mail" required />
 
-            Password:
-            <input type="text" name="password" required />
+                        <h5>Password:</h5>
+                        <input type="text" name="password" placeholder="*******" required /><br><br>
 
-            <button type="submit">Login</button>
+                        <button type="submit">Login</button>
 
-        </form>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+
+        </footer>
 
     </body>
 </html>

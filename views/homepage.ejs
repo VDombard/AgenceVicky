@@ -1,58 +1,79 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
+
     <head>
+
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="pageAccueil" content="ceci est la page d'accueil de l'utilisateur">
+
+        <link rel="stylesheet" href="/public/style.css" />
+
         <title>Home Page</title>
-        <style></style>
+
     </head>
 
     <body>
-        <h1>Home page</h1>
+        <header>
+            <h1>Home page</h1>
+        </header>
 
-        <form action="/confirm" method="GET">
-            <button type="submit">Supprimer le compte</button>
-        </form>
+        <main>
 
-        <form action="/userHome" method="GET">
-            <button type="submit">Log out</button>
-        </form>
+                <div id="liste">
 
-        <h2>Liste des destinations</h2>
+                    <h2>Liste de vos destinations</h2>
 
-        <form action="/homepage" method="GET">
-            <button type="submit"> Destinations </button>
-        </form>
+                    <form action="/homepage" method="GET">
+                        <button type="submit"> Destinations </button>
+                    </form>
 
-        <form action="/agence" method="GET">
-            <button type="submit">Agences</button>
-        </form>
+                    <form action="/agence" method="GET">
+                        <button type="submit">Agences</button>
+                    </form>
 
-        <form action="/destaddform" method="GET">
-        <button type="submit">Ajouter destination</button>
-        </form>
+               
+                    <% for (let i = 0 ; i < destination.length ; i++) {%>
+                    
+                            <form action="/destupdateform/<%= destination[i].iddestination %>" method="GET">
+                            <button type="submit">Modifier</button>
+                            </form>
 
-        <div>
-            <table>
-                <% for (let i = 0 ; i < destination.length ; i++) {%>
-                <tr>
-                    <td>
-                        <form action="/destupdateform/<%= destination[i].iddestination %>" method="GET">
-                        <button type="submit">Modifier</button>
-                        </form>
+                            <form action="/destdeleteform/<%= destination[i].iddestination %>" method="GET">
+                            <button type="submit">Supprimer</button>
+                            </form>
 
-                        <form action="/destdeleteform/<%= destination[i].iddestination %>" method="GET">
-                        <button type="submit">Supprimer</button>
-                        </form>
-                    </td>
 
-                    <td><%= destination[i].country %> </td> 
-                    <td><%= destination[i].city %> </td> 
-                    <td><%= destination[i].days %> </td>
-                </tr>
-                <% } %>
-            </table>
-        </div>
-        
+                        <%= destination[i].country %> 
+                        <%= destination[i].city %> 
+                        <%= destination[i].days %> 
+                    
+                    <% } %>
+
+                    <form action="/destaddform" method="GET">
+                        <button type="submit">Ajouter destination</button>
+                    </form>
+                </div>
+            
+        </main>
+
+        <nav>
+                <ul style="list-style-type: none;">
+                    
+                    <li><form action="/confirm" method="GET">
+                        <button type="submit">Supprimer compte</button>
+                    </form></li>
+
+                    <li><form action="/userHome" method="GET">
+                        <button type="submit">Log out</button>
+                    </form></li>
+                </ul>
+        </nav>
+
+        <footer>
+
+        </footer>
 
 
     </body>

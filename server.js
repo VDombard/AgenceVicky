@@ -27,6 +27,10 @@ app.all('/*', function(req, res, next) {
     else { next();}
 });
 
+app.get('/public/style.css', function (req, res) {
+    res.sendFile(__dirname + '/public/style.css');
+});
+
 //Import routes
 let router = require('./routes');
 app.use('/', router);

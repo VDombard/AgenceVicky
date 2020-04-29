@@ -1,0 +1,125 @@
+/*************************************** Commun *****************************************/
+:root {
+    --base-color-h: 205;
+    --base-color-s: 80%;
+    --base-color-l: 60%;
+    --base-color: hsl(var(--base-color-h),
+                    var(--base-color-s),
+                    var(--base-color-l));
+    --base-color-darken-25: hsl(var(--base-color-h),
+                    var(--base-color-s),
+                    calc(var(--base-color-l) - 25%));
+    --length-M: 2rem;
+    --length-L: calc(var(--length-M)*2);
+    --length-S: calc(var(--length-M)/2);
+}
+
+html
+{
+    display: block;
+    line-height: 1,15;
+}
+
+meta {
+    display: none;
+}
+
+body
+{
+    background-color: white;
+    font-family: Verdana, Arial, Georgia, Times New Roman;
+    display: block;
+    margin: 0em;
+    padding-top: 5rem;
+}
+
+header {
+    background-color: var(--base-color);
+    height: var(--length-L);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 1rem;
+    z-index: 300;
+}
+
+header h1 {
+    padding: 5px 0 15px 0; /*top, right, bottom, left*/
+    font-size: 1.5em;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.block {
+    text-align: center;
+}
+
+footer {
+    background-color: var(--base-color);
+    height: var(--length-L);
+    position: fixed;
+    left: 0em;
+    bottom: 0em;
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    body {
+        padding-left: 10em;
+    }
+    main {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/********************************** USER HOME *********************************************/
+#login {
+    background-color: skyblue;
+    display: block;
+    margin: 0px 200px 0px 200px; /*top, right, bottom, left - extern */ 
+    padding: 20px 0px 20px 0px; /*top, right, bottom, left - intern */ 
+    border-radius: 50px;
+}
+
+#register {
+    padding-top: 20px;
+}
+
+/******************************HOME PAGE *******************************************/
+#liste {
+    text-align: center;
+}
+
+#table {
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    top: 4rem;
+    bottom: 0em;
+    width: 6em;
+    background-color: var(--base-color-darken-25);
+    padding: 2rem 0;
+}
+
+nav ul {
+    padding: 0px 5px 0px 5px;/*top, right, bottom, left*/
+    text-align: center;
+}
+
+nav li {
+    margin: 10px 0px 10px 0px;/*top, right, bottom, left*/
+}
+
+/*****************************************REGISTER*************************************/
+#enregister {
+    background-color: skyblue;
+    display: block;
+    margin: 0px 200px 0px 200px; /*top, right, bottom, left - extern */ 
+    padding: 20px 0px 20px 0px; /*top, right, bottom, left - intern */ 
+    border-radius: 50px;
+}

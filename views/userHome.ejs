@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
+
     <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="session" content="Page pour se login ou s'enregistrer">
+
+        <link rel="stylesheet" href="/public/style.css" />
+
         <title>Login</title>
-        <style></style>
+
     </head>
 
     <body>
 
-        <h1>Page d'access à votre session</h1>
+        <header>
 
-        <form action="/auth_login" method="POST">
-            E-mail:
-            <input type="text" name="email">
-            Password:
-            <input type="text" name="password">
+            <h1>Page session</h1>
 
-            <button type="submit">Login</button>
-        </form>
+        </header>
 
-            <button><a href="/register">S'enregistrer</a></button>
-        
+        <main>
+
+            <div class="block">
+                <div id="login">
+                    <form action="/auth_login" method="POST">
+
+                        <h4>E-mail:</h4>
+
+                        <input type="text" name="email">
+
+                        <h4>Password:</h4>
+
+                        <input type="text" name="password"><br><br>
+
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+
+                <div id="register">
+                    <button><a href="/register">S'enregistrer</a></button>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+
+        </footer>
 
     </body>
 </html>
