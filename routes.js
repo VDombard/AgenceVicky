@@ -25,7 +25,7 @@ router.post('/auth_register', userController.register);
 router.get('/userHome', userController.userHome);
 router.post('/auth_login', userController.login);
 router.post('/user_delete', userController.userDelete);
-router.get('/confirm', userController.confirm);
+router.get('/delete_account', userController.deleteAccount);
 
 
 //Routes <DESTINATION>

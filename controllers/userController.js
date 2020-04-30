@@ -65,6 +65,6 @@ exports.userDelete = function (req, res) {
     
  };
 
-exports.confirm = function (req, res) {
-        res.render('confirm.ejs'); 
+exports.deleteAccount = function (req, res) {
+        res.render('deleteAccount.ejs'); 
 };

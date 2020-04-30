@@ -35,5 +35,5 @@ app.get('/public/style.css', function (req, res) {
 let router = require('./routes');
 app.use('/', router);
 
-var port = 8080
+var port = 8000
 app.listen(port, function () { console.log('Running server on port ' + port); })

@@ -5,7 +5,7 @@ let destinationList = [];
 
 exports.homepage = function (req, res) {
     console.log(req.session)
-    connection.query("SELECT des.iddestination, fkuser, des.country, des.city, des.days, age.nomagence FROM users.destination des inner join users.agence age on des.fkagence = age.idagence where des.fkuser = ?", req.session.iduser, function (error, resultSQL) {
+    connection.query("SELECT des.iddestination, fkuser, des.country, des.city, des.days, age.nomagence FROM users.destination des inner join users.agence age on des.fkagence = age.idagence", function (error, resultSQL) {
         if (error) {
             res.status(400).json({'message' : error });
         }
