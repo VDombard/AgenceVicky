@@ -13,13 +13,13 @@ exports.agenceListe = function(req, res) {
             res.status(200);
             agenceList = resultSQL;
             console.log(agenceList);
-            res.render('agence.ejs', {agence: agenceListe});  
+            res.render('agence.ejs', {agence: agenceList});  
         }  
     });  
 }
 //Ajouter une destination
 exports.agenceAddForm = function(req, res) {
-    res.render('agenceAdd.ejs', {idagence:"", nomagence:""});
+    res.render('agenceAdd.ejs', {idagence: "", nomagence:""});
 }
 
 //Nouvelle destination
@@ -65,7 +65,7 @@ exports.agenceUpdateForm = function (request, response) {
         }
         else {
             response.status(200);
-            agenceList = resultSQL;
+            agence = resultSQL;
             response.render('agenceUpdate.ejs', {idagence:agence[0].idagence, nomagence:agence[0].nomagence});
         }
     });
