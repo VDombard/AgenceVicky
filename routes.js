@@ -58,7 +58,7 @@ router.post('/agenceupdate', agenceController.agenceUpdate);
 
 //Routes <API AGENCE>
 router.get('/api/agence', agenceApiController.agenceListe);
-router.post('/api/agenceadd', agenceApiController.agenceAdd);
-router.put('/api/agenceupdate', agenceApiController.agenceUpdate);
+router.post('/api/agence', agenceApiController.agenceAdd);
+router.put('/api/agence/:idagence', agenceApiController.agenceUpdate);
 
 module.exports = router;

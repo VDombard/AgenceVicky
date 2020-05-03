@@ -3,38 +3,33 @@ let connection = require('../db');
 
 let agenceList = [];
 
-// Retourne une liste de destinations
+// Retourne une liste d'agence
 exports.agenceListe = function(req, res) {
     connection.query("SELECT * FROM users.agence", function (error, resultSQL) {
         if (error) {
-            res.status(404).send(error);
+            res.status(400).json({'message' : error });
         }
         else {
             res.status(200);
             agenceList = resultSQL;
-            res.render('agence.ejs', {agence: agenceList});  
+            res.json({agence: agenceList});  
         }  
     });  
-}
-//Ajouter une destination
-exports.agenceAddForm = function(req, res) {
-    res.render('agenceAdd.ejs', {idagence:"", nomagence:""});
 }
 
 //Nouvelle destination
 exports.agenceAdd = function(req, res) {
     let idagence = req.body.idagence;
     let nomagence = req.body.nomagence;
-    //let sess = req.session.iduser
     
     let agencesAdd = new Agence(idagence, nomagence);
     console.log(agencesAdd);
     connection.query("INSERT INTO users.agence set ?", agencesAdd, function (error, resultSQL) {
         if(error) {
-            res.status(404).send(error);
+            res.status(404).json({'message' : error });
         }
         else {
-            res.status(200).redirect('/agence');
+            res.status(200).json({'message' : 'success'});
         }
     })
 };
@@ -48,24 +43,10 @@ exports.agenceUpdate = function(req, res) {
     console.log(agencesUpdate);
     connection.query("UPDATE users.agence SET ? WHERE idagence = ?", [agencesUpdate, idagence], function (error, resultSQL) {
         if(error) {
-            res.status(404).send(error);
+            res.status(404).json({'message' : error });
         }
         else {
-            res.redirect('/agence');
-        }
-    });
-}
-
-exports.agenceUpdateForm = function (request, response) {
-    let idagence = request.params.idagence;
-    connection.query("Select * from users.agence WHERE idagence = ?", idagence ,function (error, resultSQL) {
-        if (error)  {
-            response.status(400).send(error);
-        }
-        else {
-            response.status(200);
-            agenceList = resultSQL;
-            response.render('agenceUpdate.ejs', {idagence:agence[0].idagence, nomagence:agence[0].nomagence});
+            res.status(200).json({'message' : 'success'});
         }
     });
 }
