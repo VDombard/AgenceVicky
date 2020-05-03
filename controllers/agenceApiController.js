@@ -12,7 +12,7 @@ exports.agenceListe = function(req, res) {
         else {
             res.status(200);
             agenceList = resultSQL;
-            res.render('agence.ejs', {agence: agenceListe});  
+            res.render('agence.ejs', {agence: agenceList});  
         }  
     });  
 }

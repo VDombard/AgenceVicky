@@ -3,6 +3,7 @@ let router = express.Router();
 
 //Routes vers dossier controllers
 var userController = require('./controllers/userController');
+var userApiController = require('./controllers/userApiController');
 var destinationController = require('./controllers/destinationController');
 var destinationApiController = require('./controllers/destinationApiController');
 var agenceController = require('./controllers/agenceController');
@@ -26,6 +27,11 @@ router.get('/userHome', userController.userHome);
 router.post('/auth_login', userController.login);
 router.post('/user_delete', userController.userDelete);
 router.get('/delete_account', userController.deleteAccount);
+
+//Routes <API USER>
+router.get('/api/user', userApiController.userList);
+router.post('/api/user', userApiController.register);
+router.delete('/api/user/:iduser', userApiController.userDelete);
 
 
 //Routes <DESTINATION>

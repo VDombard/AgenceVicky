@@ -28,7 +28,7 @@ exports.login = function (req, res) {
     }
 };
 
-//Send formular to update user
+//Send formular to add an user
 exports.userFormUpdate = function(req, res) {
     res.render('register.ejs');
 }
