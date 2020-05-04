@@ -45,9 +45,9 @@ router.post('/destdelete/:iddestination', destinationController.destDelete);
 
 //Routes <API DESTINATION>
 router.get('/api/homepage', destinationApiController.homepage);
-router.post('/api/destadd', destinationApiController.destAdd);
-router.put('/api/destupdate/:iddestination', destinationApiController.destUpdate);
-router.delete('/api/destdelete/:iddestination', destinationApiController.destDelete);
+router.post('/api/homepage', destinationApiController.destAdd);
+router.put('/api/homepage/:iddestination', destinationApiController.destUpdate);
+router.delete('/api/homepage/:iddestination', destinationApiController.destDelete);
 
 //Routes <AGENCE>
 router.get('/agence', agenceController.agenceListe);
