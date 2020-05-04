@@ -5,7 +5,7 @@ let destinationList = [];
 
 exports.homepage = function (req, res) {
     console.log(req.session)
-    connection.query("SELECT des.iddestination, fkuser, des.country, des.city, des.days, age.nomagence FROM users.destination des inner join users.agence age on des.fkagence = age.idagence", function (error, resultSQL) {
+    connection.query("SELECT * FROM users.destination", function (error, resultSQL) {
         if (error) {
             res.status(400).json({'message' : error });
         }
@@ -21,7 +21,7 @@ exports.homepage = function (req, res) {
 //Send formular to add a new destination
 exports.destAdd = function(req, res) {
     let iddestination = req.body.iddestination;
-    let fkuser = req.session.iduser;
+    let fkuser = req.body.fkuser;
     let fkagence = req.body.fkagence;
     let country = req.body.country;
     let city = req.body.city;
@@ -30,12 +30,12 @@ exports.destAdd = function(req, res) {
     
     let destinationsAdd = new Destination(iddestination, fkuser, fkagence, country, city, days);
     console.log(destinationsAdd);
-    connection.query("INSERT INTO users.destination set ?", destinationsAdd, function (error, resultSQL) {
+    connection.query("INSERT INTO users.destination SET ?", destinationsAdd, function (error, resultSQL) {
         if(error) {
             res.status(404).json({'message' : error });
         }
         else {
-            console.log(req.session.iduser);
+            console.log(req.params.iduser);
             res.status(200).json({'message' : 'success'});
         }
     });
@@ -43,8 +43,8 @@ exports.destAdd = function(req, res) {
 
 //Modifier une destination de la liste
 exports.destUpdate = function(req, res) {
-    let iddestination = req.body.iddestination;
-    let fkuser = req.session.iduser;
+    let iddestination = req.params.iddestination;
+    let fkuser = req.body.fkuser;
     let fkagence = req.body.fkagence;
     let country = req.body.country;
     let city = req.body.city;
@@ -57,6 +57,7 @@ exports.destUpdate = function(req, res) {
             res.status(404).json({'message' : error});
         }
         else {
+            console.log(req.params.iduser);
             res.status(200).json({'message' : 'success'});
         }
     });
