@@ -42,7 +42,7 @@ exports.register = function (req, res) {
 //Delete an user
 exports.userDelete = function (req, res) {
     let sql = "DELETE FROM `users`.`user` WHERE iduser = ?";
-    connection.query( sql , [req.session.iduser], (error, resultSQL) => {
+    connection.query( sql , [req.params.iduser], (error, resultSQL) => {
         if(error) {
             res.status(400).json({'message' : error });
         }
