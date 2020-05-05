@@ -44,8 +44,8 @@ router.get('/destdeleteform/:iddestination', destinationController.destDeleteFor
 router.post('/destdelete/:iddestination', destinationController.destDelete);
 
 //Routes <API DESTINATION>
-router.get('/api/homepage', destinationApiController.homepage);
-router.post('/api/homepage', destinationApiController.destAdd);
+router.get('/api/homepage/', destinationApiController.homepage);
+router.post('/api/homepage/', destinationApiController.destAdd);
 router.put('/api/homepage/:iddestination', destinationApiController.destUpdate);
 router.delete('/api/homepage/:iddestination', destinationApiController.destDelete);
 

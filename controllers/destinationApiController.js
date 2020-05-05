@@ -3,6 +3,7 @@ let connection = require('../db');
 
 let destinationList = [];
 
+//Read destination liste
 exports.homepage = function (req, res) {
     console.log(req.session)
     connection.query("SELECT * FROM users.destination", function (error, resultSQL) {
@@ -18,7 +19,7 @@ exports.homepage = function (req, res) {
     });
 }
 
-//Send formular to add a new destination
+//Create destination
 exports.destAdd = function(req, res) {
     let iddestination = req.body.iddestination;
     let fkuser = req.body.fkuser;
@@ -41,7 +42,7 @@ exports.destAdd = function(req, res) {
     });
 };
 
-//Modifier une destination de la liste
+//Update destination
 exports.destUpdate = function(req, res) {
     let iddestination = req.params.iddestination;
     let fkuser = req.body.fkuser;
@@ -63,7 +64,7 @@ exports.destUpdate = function(req, res) {
     });
 }
 
-//Send formular to delete a destination
+//Delete destination
 exports.destDelete = function (req, res) {
     let iddestination = req.params.iddestination;
     console.log(iddestination);

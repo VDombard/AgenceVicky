@@ -3,6 +3,7 @@ let connection = require('../db');
 
 let userList = [];
 
+//Read user liste
 exports.userList = function (req, res) {
     console.log(req.session)
     connection.query("SELECT * FROM users.user", function (error, resultSQL) {
@@ -18,7 +19,7 @@ exports.userList = function (req, res) {
     });
 }
 
-//Add user
+//Create user
 exports.register = function (req, res) {
     let iduser = req.body.iduser;
     let firstname = req.body.firstname;
@@ -39,7 +40,7 @@ exports.register = function (req, res) {
     });
 };
 
-//Delete an user
+//Delete user
 exports.userDelete = function (req, res) {
     let sql = "DELETE FROM `users`.`user` WHERE iduser = ?";
     connection.query( sql , [req.params.iduser], (error, resultSQL) => {

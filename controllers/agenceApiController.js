@@ -3,7 +3,7 @@ let connection = require('../db');
 
 let agenceList = [];
 
-// Retourne une liste d'agence
+//Read agence liste
 exports.agenceListe = function(req, res) {
     connection.query("SELECT * FROM users.agence", function (error, resultSQL) {
         if (error) {
@@ -17,7 +17,7 @@ exports.agenceListe = function(req, res) {
     });  
 }
 
-//Nouvelle destination
+//Create agence
 exports.agenceAdd = function(req, res) {
     let idagence = req.body.idagence;
     let nomagence = req.body.nomagence;
@@ -34,7 +34,7 @@ exports.agenceAdd = function(req, res) {
     })
 };
 
-//Modifier une destination de la liste
+//Update agence
 exports.agenceUpdate = function(req, res) {
     let idagence = req.body.idagence;
     let nomagence = req.body.nomagence;
