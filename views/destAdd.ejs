@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
     <head>
 
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="ajoutDestination" content="ceci est la page d'ajout d'une destination du l'utilisateur">
+        <meta name="description" content="ceci est la page d'ajout d'une destination du l'utilisateur">
 
         <link rel="stylesheet" href="/public/style.css" media="all"/>
 
@@ -14,28 +14,46 @@
     </head>
 
     <body>
-        <h1>Ajouter une destination</h1>
 
-        <form action="/destadd" method="POST">
-        
-            Country:
-            <input type="text" name="country" value="<%= country %>"> <br>
-            City:
-            <input type="text" name="city" value="<%= city %>"> <br>
-            Days:
-            <input type="text" name="days" value="<%= days %>"> <br>
-            Agence:
-            <input type="text" name="fkagence" value="<%= fkagence %>"> <br>
+        <header>
+            <h1>Vicky Airlines</h1>
+        </header>
 
-            <input type="submit" name="ajouter" value="Ajouter"><br>
+        <main>
 
-        </form>
+            <h2>Ajouter une destination</h2>
 
-        <form action="/homepage" method="GET">
-            <button type="submit">Retour à la liste</button>
-        </form>
+            <div class="menu">
+                <form action="/homepage" method="GET">
+                    <button type="submit">Retour page d'accueil</button>
+                </form>
+                <form action="/agence" method="GET">
+                    <button type="submit">Agences liste</button>
+                </form>
+            </div>
 
+            <div class="block1">
+                <form action="/destadd" method="POST">
+                
+                    Pays:
+                    <input type="text" name="country" value="<%= country %>" placeholder="Introduire le nom d'un pays" required title="Introduire le nom du pays"> <br> <br>
+                    Ville:
+                    <input type="text" name="city" value="<%= city %>" placeholder="Introduire le nom d'une ville du pays" required title="Introduire une ville du pays"> <br> <br>
+                    Nombre de jours:
+                    <input type="text" name="days" value="<%= days %>" placeholder="Nombre de jours de votre séjour" required title="Introduire le nombre de jours de votre séjour"> <br> <br>
+                    Numéro agence:
+                    <input type="text" name="fkagence" value="<%= fkagence %>" placeholder="Le numéro de l'agence" required title="Introduire le numéro de l'agence"> <br> <br>
 
+                    <button type="submit">Ajouter</button>
+
+                </form>
+            </div>
+
+        </main>
     </body>
+
+    <footer>
+
+    </footer>
 
 </html>

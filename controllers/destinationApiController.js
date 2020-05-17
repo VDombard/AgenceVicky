@@ -5,7 +5,7 @@ let destinationList = [];
 
 //Read destination liste
 exports.homepage = function (req, res) {
-    console.log(req.session)
+    //console.log(req.session)
     connection.query("SELECT * FROM users.destination", function (error, resultSQL) {
         if (error) {
             res.status(400).json({'message' : error });
@@ -36,7 +36,7 @@ exports.destAdd = function(req, res) {
             res.status(404).json({'message' : error });
         }
         else {
-            console.log(req.params.iduser);
+            //console.log(req.params.iduser);
             res.status(200).json({'message' : 'success'});
         }
     });
@@ -58,7 +58,7 @@ exports.destUpdate = function(req, res) {
             res.status(404).json({'message' : error});
         }
         else {
-            console.log(req.params.iduser);
+            //console.log(req.params.iduser);
             res.status(200).json({'message' : 'success'});
         }
     });

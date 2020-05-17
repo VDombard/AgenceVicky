@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
     <head>
 
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="updateDestination" content="ceci est la page de modification de destination de l'utilisateur">
+        <meta name="description" content="ceci est la page de modification de destination de l'utilisateur">
 
         <link rel="stylesheet" href="/public/style.css" media="all"/>
 
@@ -14,25 +14,43 @@
     </head>
 
     <body>
-        <h1>Modifier une destination</h1>
+        <header>
+            <h1>Vicky Airlines</h1>
+        </header>
 
-        <form action="/destupdate" method="POST">
-            <input type="hidden" name="iddestination" value="<%= iddestination %>">
-            Country:
-            <input type="text" name="country" value="<%= country %>"><br>
-            City:
-            <input type="text" name="city" value="<%= city %>"><br>
-            Days:
-            <input type="text" name="days" value="<%= days %>"><br>
-            Agence:
-            <input type="text" name="fkagence" value="<%= fkagence %>"><br>
+        <main>
+            
+            <h2>Modifier une destination</h2>
 
-            <button type="submit">Modifier</button>
-        </form>
+            <div class="menu">
+                <form action="/homepage" method="GET">
+                    <button type="submit">Retour page d'accueil</button>
+                </form>
+                <form action="/agence" method="GET">
+                    <button type="submit">Agences liste</button>
+                </form>
+            </div>
 
-        <form action="/homepage" method="GET">
-            <button type="submit"> Retour à la liste</button>
-        </form>
+            <div class="block1">
+                <form action="/destupdate" method="POST">
+                    <input type="hidden" name="iddestination" value="<%= iddestination %>">
+                    Pays:
+                    <input type="text" name="country" value="<%= country %>" required title="Modifier le pays"><br><br>
+                    Ville:
+                    <input type="text" name="city" value="<%= city %>" required title="Modifier la ville"><br><br>
+                    Nombre de jours:
+                    <input type="text" name="days" value="<%= days %>" required title="Modifier le nombre de jours"><br><br>
+                    Numéro de l'agence:
+                    <input type="text" name="fkagence" value="<%= fkagence %>" required title="Modifier le numéro de l'agence"><br><br>
 
+                    <button type="submit">Modifier</button>
+                </form>
+            </div>
+
+        </main>
+
+        <footer>
+
+        </footer>
     </body>
 </html>

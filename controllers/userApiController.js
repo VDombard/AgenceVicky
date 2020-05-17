@@ -5,7 +5,7 @@ let userList = [];
 
 //Read user liste
 exports.userList = function (req, res) {
-    console.log(req.session)
+    //console.log(req.session)
     connection.query("SELECT * FROM users.user", function (error, resultSQL) {
         if (error) {
             res.status(400).json({'message' : error });

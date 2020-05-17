@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
 
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="agenceListe" content="ceci est la liste des agences de voyages du l'utilisateur">
+        <meta name="description" content="ceci est la liste des agences de voyages du l'utilisateur">
 
         <link rel="stylesheet" href="/public/style.css" media="all"/>
 
@@ -13,37 +13,57 @@
     </head>
 
     <body> 
+        <header>
+            <h1>Vicky Airlines</h1>
+        </header>
 
-        <h1>Liste des agences</h1>
+        <main>
 
-        <form action = "/homepage" method="GET">
-            <button type="submit">Page d'accueil</button>
+            <h2>Liste des agences</h2>
 
-        </form>
-        <p>* L'agence s'affiche seulement si vous avez une destination liée à cette agence de voyage</p>
-        <div>
-            <table>
-                <% for(let i = 0; i < agence.length; i++) { %>
-                <tr>
-                    <td>
-                        <form action="/agenceupdateform/<%= agence[i].idagence %>" method="GET">
-                        <button type="submit">Modifier</button>
-                        </form>
-                        
-                        <form action="/agenceaddform" method="GET">
-                        <button type="submit">Ajouter</button>
-                        </form>
-                    </td>
+            <div class="menu">
+                <form action = "/homepage" method="GET">
+                    <button type="submit">Retour page d'accueil</button>
+                </form>
+            </div>
+            
+            <div class="block2">
 
-                    <td><%= agence[i].idagence %> </td>
-                    <td><%= agence[i].nomagence %> </td> 
+            <p>L'agence s'affiche seulement si vous avez une destination liée à cette agence de voyage</p>
 
-                </tr>
-                <% } %>
-            </table>
-        </div>
+                <table>
+                   <thead>
+                       <td><strong>Numéro de l'agence</strong></td>
+                       <td><strong>Nom de l'agence</strong></td>
+                   </thead>
 
+                   <tbody>
+                        <% for(let i = 0; i < agence.length; i++) { %>
+                        <tr>
+
+                            <td><%= agence[i].idagence %> </td>
+                            <td><%= agence[i].nomagence %> </td> 
+
+                            <td><form action="/agenceupdateform/<%= agence[i].idagence %>" method="GET">
+                                <button type="submit">Modifier</button>
+                                </form></td>
+                                
+
+                        </tr>
+                        <% } %>
+                   </tbody>
+                </table>
+                
+                <form action="/agenceaddform" method="GET">
+                <button type="submit">Ajouter</button>
+                </form>
+
+            </div>
+
+        </main>
     </body>
 
-    <footer></footer>
+    <footer>
+
+    </footer>
 </html>

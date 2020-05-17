@@ -51,9 +51,87 @@ header h1 {
     color: whitesmoke;
 }
 
-.block {
-    text-align: center;
+h2 {
+    color: darkblue;
 }
+
+.menu button {
+    font-size: 16px;
+    float: left;
+    border: 1px solid blue;
+    text-align: center;
+    padding: 10px 25px;
+    border-radius: 30px;
+}
+
+.menu button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.block1 {
+    background-color: lightskyblue;
+    display: block;
+    padding: 20px 0px 20px 0px; /*top, right, bottom, left - intern */ 
+    border-radius: 50px;
+    border-color: skyblue;
+    text-align: center;
+    margin: 75px auto;
+}
+
+.block1 button {
+    background-color: darkblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.block2 {
+    background-color: whitesmoke;
+    display: block;
+    padding: 20px 0px 20px 0px; /*top, right, bottom, left - intern */ 
+    border-radius: 50px;
+    border-color: skyblue;
+    text-align: center;
+    margin: 75px auto;
+}
+
+.block2 button {
+    background-color: darkblue;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 8px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+table, td, th {
+    border: 1px solid darkblue;
+    margin: 90px auto;/*top, right, bottom, left - intern */ 
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 13px;
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+ }
 
 footer {
     background-color: var(--base-color);
@@ -62,64 +140,36 @@ footer {
     left: 0em;
     bottom: 0em;
     width: 100%;
+    z-index: 1;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
     body {
-        padding-left: 10em;
+        margin: auto;/*top, right, bottom, left - extern */   
     }
     main {
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
+        width: 500px;
+        margin: 5px auto;
+        text-align: center;
+    }
+
+    .block1, .block2 {
+        width: 400px;
+    }
+    input {
+        width: 90%;
+        margin-top: 0;
+    }
+    table, td, th {
+         margin: auto;
     }
 }
 
-/********************************** USER HOME *********************************************/
-#login {
-    background-color: skyblue;
-    display: block;
-    margin: 0px 200px 0px 200px; /*top, right, bottom, left - extern */ 
-    padding: 20px 0px 20px 0px; /*top, right, bottom, left - intern */ 
-    border-radius: 50px;
-}
 
-#register {
-    padding-top: 20px;
-}
+/********************************** USER HOME *********************************************/
 
 /******************************HOME PAGE *******************************************/
-#liste {
-    text-align: center;
-}
-
-#table {
-    text-align: center;
-}
-
-nav {
-    position: fixed;
-    top: 4rem;
-    bottom: 0em;
-    width: 6em;
-    background-color: var(--base-color-darken-25);
-    padding: 2rem 0;
-}
-
-nav ul {
-    padding: 0px 5px 0px 5px;/*top, right, bottom, left*/
-    text-align: center;
-}
-
-nav li {
-    margin: 10px 0px 10px 0px;/*top, right, bottom, left*/
-}
 
 /*****************************************REGISTER*************************************/
-#enregister {
-    background-color: skyblue;
-    display: block;
-    margin: 0px 200px 0px 200px; /*top, right, bottom, left - extern */ 
-    padding: 20px 0px 20px 0px; /*top, right, bottom, left - intern */ 
-    border-radius: 50px;
-}
+
+/****************************************DEST-UPDATE************************************/

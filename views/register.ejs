@@ -6,7 +6,7 @@
 
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="senregister" content="Page pour se créer un compte">
+        <meta name="description" content="Page pour se créer un compte">
 
         <link rel="stylesheet" href="/public/style.css" media="all"/>
 
@@ -21,26 +21,31 @@
         </header>
 
         <main>
-            <div class="block">
-                <div id="enregister">
-                    <form action="/auth_register" method="POST">
-                    
-                        <h5>Firstname:</h5>
-                        <input type="text" name="firstname" placeholder="Prénom" required />
 
-                        <h5>Lastname:</h5>
-                        <input type="text" name="lastname" placeholder="Nom de famille" required />
+            <h2>S'enregistrer</h2>
 
-                        <h5>E-mail:</h5>
-                        <input type="text" name="email" placeholder="Votre e-mail" required />
+            <div class="menu">
+                <button><a href="/userHome" alt="Retour à la page d'identification">Retour page d'identification</a></button>
+            </div>
 
-                        <h5>Password:</h5>
-                        <input type="text" name="password" placeholder="*******" required /><br><br>
+            <div class="block1">
+                <form action="/auth_register" method="POST">
+                
+                    <h5>Prénom:</h5>
+                    <input type="text" name="firstname" placeholder="Prénom" required title="Introduire son prénom"/>
 
-                        <button type="submit">Login</button>
+                    <h5>Nom de famille:</h5>
+                    <input type="text" name="lastname" placeholder="Nom de famille" required title="Introduire son nom de famille"/>
 
-                    </form>
-                </div>
+                    <h5>E-mail:</h5>
+                    <input type="text" name="email" placeholder="Votre e-mail" required title="Introduire son adresse mail"/>
+
+                    <h5>Mot de passe:</h5>
+                    <input type="password" name="password" placeholder="*******" required title="Introduire son mot de passe"/><br><br>
+
+                    <button type="submit" title="Bouton pour valider son identification">Valider</button>
+
+                </form>
             </div>
         </main>
 

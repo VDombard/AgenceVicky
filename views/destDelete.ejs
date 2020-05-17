@@ -1,38 +1,60 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
     <head>
 
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="deleteDestination" content="ceci est la page de suppression de destination du l'utilisateur">
+        <meta name="description" content="ceci est la page de suppression de destination du l'utilisateur">
 
         <link rel="stylesheet" href="/public/style.css" media="all"/>
 
         <title>Supprimer destination</title>
 
     </head>
-        <h1>Supprimer une destination</h1>
 
-        <form action="/destdelete/<%= iddestination %>" method="POST">
-            <input type="hidden" name="iddestination" value="<%= iddestination %>">
-            Country:
-            <input type="text" name="country" value="<%= country %>"><br>
-            City:
-            <input type="text" name="city" value="<%= city %>"><br>
-            Days:
-            <input type="text" name="days" value="<%= days %>"><br>
-            Agence:
-            <input type="text" name="fkagence" value="<%= fkagence %>"><br>
-
-            <button type="submit">Supprimer</button>
-        </form>
-
-        <form action="/homepage" method="GET">
-            <button type="submit"> Retour à la liste</button>
-        </form>
     <body>
 
+        <header>
+            <h1>Vicky Airlines</h1>
+        </header>
+
+        <main>
+
+            <h2>Supprimer une destination</h2>
+
+            <div class="menu">
+                <form action="/homepage" method="GET">
+                    <button type="submit">Retour page d'accueil</button>
+                </form>
+
+                <form action="/agence" method="GET">
+                    <button type="submit">Agences liste</button>
+                </form>
+
+            </div>
+
+            <div class="block1">
+                <form action="/destdelete/<%= iddestination %>" method="POST">
+                    <input type="hidden" name="iddestination" value="<%= iddestination %>">
+                    Pays:
+                    <input type="text" name="country" value="<%= country %>" required title="Le nom du pays"><br><br>
+                    Ville:
+                    <input type="text" name="city" value="<%= city %>" required title="Le nom de la ville"><br><br>
+                    Nombre de jours:
+                    <input type="text" name="days" value="<%= days %>" required title="Le nombre de jours de votre séjour"><br><br>
+                    Numéro agence:
+                    <input type="text" name="fkagence" value="<%= fkagence %>" required title="Le numéro de l'agence"><br><br>
+
+                    <button type="submit">Supprimer</button>
+                </form>
+            </div>
+
+        </main>
     </body>
+
+    <footer>
+
+    </footer>
 
 </html>

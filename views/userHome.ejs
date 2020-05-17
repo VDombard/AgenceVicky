@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="session" content="Page pour se login ou s'enregistrer">
+        <meta name="description" content="Page pour se login ou s'enregistrer">
 
         <link rel="stylesheet" href="/public/style.css" media="all"/>
 
@@ -16,32 +16,30 @@
     <body>
 
         <header>
-
-            <h1>Page session</h1>
-
+            <h1>Vicky Airlines</h1>
         </header>
 
         <main>
 
-            <div class="block">
-                <div id="login">
-                    <form action="/auth_login" method="POST">
+            <h2>Page session</h2>
 
-                        <h4>E-mail:</h4>
+            <div class="menu">
+                <button><a href="/register" alt="Aller à la page pour s'enregistrer">S'enregistrer</a></button>
+            </div>
 
-                        <input type="text" name="email">
+            <div class="block1">
+                <form action="/auth_login" method="POST">
 
-                        <h4>Password:</h4>
+                    <h4>E-mail:</h4>
 
-                        <input type="text" name="password"><br><br>
+                    <input type="text" name="email" placeholder="Votre adresse e-mail" required title="Insérer votre adresse mail">
 
-                        <button type="submit">Login</button>
-                    </form>
-                </div>
+                    <h4>Mot de passe:</h4>
 
-                <div id="register">
-                    <button><a href="/register">S'enregistrer</a></button>
-                </div>
+                    <input type="password" name="password" placeholder="Votre mot de passe" required title="Insérer votre mot de passe"><br><br>
+
+                    <button type="submit" title="Bouton pour se loguer"><strong>LOGIN</strong></button>
+                </form>
             </div>
 
         </main>

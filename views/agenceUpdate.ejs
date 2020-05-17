@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
 
     <head>
 
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="agenceUpdate" content="ceci est la page de modification du nom de l'agence du l'utilisateur">
+        <meta name="description" content="Ceci est la page de modification du nom de l'agence du l'utilisateur">
 
         <link rel="stylesheet" href="/public/style.css" media="all"/>
 
@@ -15,19 +15,34 @@
     </head>
 
     <body>
-        <h1>Modifier le nom de l'agence</h1>
-        <form action="/agenceupdate" method="POST">
+        <header>
+            <h1>Vicky Airlines</h1>
+        </header>
 
-            <input type="hidden" name="idagence" value="<%= idagence %>" ><br>
-            Nom agence:
-            <input type="text" name="nomagence" value="<%= nomagence %>" ><br>
+        <main>
+            
+            <h2>Modifier le nom de l'agence</h2>
 
-            <button type="submit">Modifier</button>
-        </form>
+            <div class="menu">
+                <form action="/homepage" method="GET">
+                    <button type="submit">Retour page d'accueil</button>
+                </form>
+                <form action="/agence" method="GET">
+                    <button type="submit">Agences liste</button>
+                </form>
+            </div>
 
-        <form action="/homepage" method="GET">
-            <button type="submit"> Retour à la liste</button>
-        </form>
+            <div class="block1">
+                <form action="/agenceupdate" method="POST">
+
+                    <input type="hidden" name="idagence" value="<%= idagence %>" ><br>
+                    Nom agence:
+                    <input type="text" name="nomagence" value="<%= nomagence %>" required title="Le nom de l'agence"><br>
+
+                    <button type="submit">Modifier</button>
+                </form>
+            </div>
+        </main>        
     </body>
 
     <footer></footer>
